@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneTransition="*res://scenes/autoload/scene_transition.tscn"
 HoneyManager="*res://scenes/autoload/honey_manager.gd"
+LevelManager="*res://scenes/autoload/level_manager.gd"
 
 [input]
 

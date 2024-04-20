@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmmgritrauvj6"]
+
+[ext_resource type="Script" path="res://scenes/level_progress/level_progress.gd" id="1_qq7gy"]
+
+[node name="LevelProgress" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qq7gy")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 646.0
+offset_bottom = 96.0
+
+[node name="TimerLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 2.0
+offset_right = 821.0
+offset_bottom = 91.0
