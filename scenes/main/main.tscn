@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl7kmv1cyrida"]
+[gd_scene load_steps=4 format=3 uid="uid://bl7kmv1cyrida"]
 
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_1lwff"]
 [ext_resource type="PackedScene" uid="uid://bb7j2lqtjtg2h" path="res://scenes/bee/bee.tscn" id="1_nprhd"]
 [ext_resource type="PackedScene" uid="uid://bo4vb0kd6ssbi" path="res://scenes/honey_score/honey_score.tscn" id="2_pv3ry"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_1lwff")
 
 [node name="Bee" parent="." instance=ExtResource("1_nprhd")]
-position = Vector2(562, 293)
+position = Vector2(576, 324)
 
 [node name="HoneyScore" parent="." instance=ExtResource("2_pv3ry")]
 offset_left = 983.0

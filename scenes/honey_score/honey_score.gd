@@ -8,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	%Score.text = str(HoneyManager.current_honey)
+	%Score.text = "Score: " + str(HoneyManager.current_honey)
+	%PassiveIncome.text = "Passive income: " + str(HoneyManager.passive_income)
