@@ -5,6 +5,7 @@ var passive_income : float = 1.0
 var click_base_modifier : float = 1.5
 var click_base_value : float = 1.0
 var total_honey_on_current_level : float = 0.0 #(dsmoliakov): being also updated from level manager
+var freeze: bool = true
 #var delta_cumsum = 0.0
 #var period_sec = 0.2
 
@@ -16,6 +17,8 @@ func get_amount_generated_by_click():
 	return click_base_value * click_base_modifier
 
 func click():
+	if freeze:
+		return
 	var honey_to_add_on_click = get_amount_generated_by_click()
 	current_honey += honey_to_add_on_click
 	total_honey_on_current_level += honey_to_add_on_click
@@ -27,6 +30,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if freeze:
+		return
 	var honey_to_add : float = 0.0
 	honey_to_add += passive_income * delta
 	#(dsmoliakov): splitting current_honey and total honey to keep track of level progression

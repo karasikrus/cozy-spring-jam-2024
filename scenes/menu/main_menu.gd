@@ -15,6 +15,7 @@ func on_play_pressed():
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 	SceneTransition.open_screen()
 	LevelManager.start_first_level()
+	HoneyManager.freeze = false
 
 
 func on_options_pressed():
