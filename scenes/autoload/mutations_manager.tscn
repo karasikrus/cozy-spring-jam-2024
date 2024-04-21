@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf6ee1b4bkr0g"]
+
+[ext_resource type="Script" path="res://scenes/autoload/mutations_manager.gd" id="1_uoebj"]
+[ext_resource type="Resource" uid="uid://byo4t6gtv10c7" path="res://scenes/mutation_card/mutations/mutation_resource_3_clicks.tres" id="2_y4tn4"]
+[ext_resource type="Resource" uid="uid://bv55lmpq75w6b" path="res://scenes/mutation_card/mutations/mutation_resource_reverse.tres" id="3_m2ku3"]
+[ext_resource type="Resource" uid="uid://c7c6s202uyyf8" path="res://scenes/mutation_card/mutations/mutation_resource_test.tres" id="4_t6iqn"]
+
+[node name="MutationsManager" type="Node"]
+script = ExtResource("1_uoebj")
+all_mutations = Array[Resource("res://scenes/mutation_card/mutation_resource.gd")]([ExtResource("2_y4tn4"), ExtResource("3_m2ku3"), ExtResource("4_t6iqn")])

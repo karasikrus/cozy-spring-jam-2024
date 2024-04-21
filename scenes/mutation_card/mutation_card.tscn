@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnhp4e354dj7h"]
+
+[ext_resource type="Script" path="res://scenes/mutation_card/mutation_card.gd" id="1_pkxcv"]
+[ext_resource type="Resource" uid="uid://c7c6s202uyyf8" path="res://scenes/mutation_card/mutations/mutation_resource_test.tres" id="2_syd64"]
+[ext_resource type="Texture2D" uid="uid://doma1t5kg73iq" path="res://scenes/mutation_card/mutations/Ability card.png" id="3_xy3yf"]
+[ext_resource type="Texture2D" uid="uid://bo7wys1u3eepf" path="res://scenes/mutation_card/mutations/icons/Icon2.png" id="4_q2ps3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7e5s"]
+texture = ExtResource("3_xy3yf")
+
+[sub_resource type="Animation" id="Animation_5kv8u"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3)]
+}
+
+[sub_resource type="Animation" id="Animation_lhijb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wq0ol"]
+resource_name = "unhover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dlrg"]
+_data = {
+"RESET": SubResource("Animation_lhijb"),
+"hover": SubResource("Animation_5kv8u"),
+"unhover": SubResource("Animation_wq0ol")
+}
+
+[node name="MutationCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("1_pkxcv")
+mutation_resource = ExtResource("2_syd64")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 293.0
+offset_bottom = 338.0
+pivot_offset = Vector2(146, 169)
+theme_override_styles/panel = SubResource("StyleBoxTexture_t7e5s")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Control" type="Control" parent="Panel/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 20.0
+offset_top = 7.0
+offset_right = 216.0
+offset_bottom = 43.0
+size_flags_vertical = 1
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.164063, 0.144656, 0.0179443, 1)
+text = "Mutation"
+horizontal_alignment = 1
+
+[node name="MutationTextureRect" type="TextureRect" parent="Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 73.0
+offset_top = 70.0
+offset_right = 306.0
+offset_bottom = 348.0
+scale = Vector2(0.358698, 0.358698)
+texture = ExtResource("4_q2ps3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DescriptionRichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 16.0
+offset_top = 194.0
+offset_right = 215.0
+offset_bottom = 270.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Test description"
+fit_content = true
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6dlrg")
+}
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]

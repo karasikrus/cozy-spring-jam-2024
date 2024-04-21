@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MutationResource" load_steps=3 format=3 uid="uid://bv55lmpq75w6b"]
+
+[ext_resource type="Script" path="res://scenes/mutation_card/mutation_resource.gd" id="1_mqs65"]
+[ext_resource type="Texture2D" uid="uid://banub22f1mo4w" path="res://scenes/mutation_card/mutations/icons/Icon3.png" id="2_gpwnl"]
+
+[resource]
+script = ExtResource("1_mqs65")
+id = "reverse"
+texture = ExtResource("2_gpwnl")
+name = "Honey Reverse"
+description = "You may live through one failed Hive Inspection"

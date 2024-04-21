@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MutationResource" load_steps=3 format=3 uid="uid://byo4t6gtv10c7"]
+
+[ext_resource type="Script" path="res://scenes/mutation_card/mutation_resource.gd" id="1_xely8"]
+[ext_resource type="Texture2D" uid="uid://bo7wys1u3eepf" path="res://scenes/mutation_card/mutations/icons/Icon2.png" id="2_m550d"]
+
+[resource]
+script = ExtResource("1_xely8")
+id = "3_clicks"
+texture = ExtResource("2_m550d")
+name = "Triple Click"
+description = "You click thrice as fast"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MutationResource" load_steps=2 format=3 uid="uid://def0wwov4gqou"]
+
+[ext_resource type="Script" path="res://scenes/mutation_card/mutation_resource.gd" id="1_2q4du"]
+
+[resource]
+script = ExtResource("1_2q4du")
+id = ""
+name = ""
+description = ""

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MutationResource" load_steps=3 format=3 uid="uid://c7c6s202uyyf8"]
+
+[ext_resource type="Script" path="res://scenes/mutation_card/mutation_resource.gd" id="1_v0p7x"]
+[ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="2_fefkk"]
+
+[resource]
+script = ExtResource("1_v0p7x")
+id = "test"
+texture = ExtResource("2_fefkk")
+name = "Test Mutation"
+description = "You income becomes 100% of your current incomes"

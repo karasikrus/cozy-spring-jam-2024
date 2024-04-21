@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0aoec185rqqw"]
+
+[ext_resource type="Script" path="res://scenes/mutation_screen/mutation_screen.gd" id="1_i070t"]
+[ext_resource type="PackedScene" uid="uid://cnhp4e354dj7h" path="res://scenes/mutation_card/mutation_card.tscn" id="1_tdmv1"]
+
+[sub_resource type="Gradient" id="Gradient_3hd43"]
+colors = PackedColorArray(0.292389, 0, 0.558594, 0, 0.294118, 0, 0.556863, 0.796078)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wlig4"]
+gradient = SubResource("Gradient_3hd43")
+fill = 1
+fill_from = Vector2(0.512821, 0.444444)
+
+[node name="MutationScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_i070t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_wlig4")
+
+[node name="MutationCardA" parent="TextureRect" instance=ExtResource("1_tdmv1")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 201.0
+offset_top = 113.0
+offset_right = 201.0
+offset_bottom = 113.0
+
+[node name="MutationCardB" parent="TextureRect" instance=ExtResource("1_tdmv1")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 660.0
+offset_top = 116.0
+offset_right = 660.0
+offset_bottom = 116.0
