@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb7j2lqtjtg2h"]
+[gd_scene load_steps=6 format=3 uid="uid://bb7j2lqtjtg2h"]
 
 [ext_resource type="Script" path="res://scenes/bee/bee.gd" id="1_g5nf7"]
 [ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="1_xohrf"]
 [ext_resource type="AudioStream" uid="uid://fi1umnyflp4g" path="res://scenes/bee/CozyJam.wav" id="3_pjslc"]
+[ext_resource type="Script" path="res://scenes/bee/TextOnClickTemplate.gd" id="4_cf7vl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m6k4s"]
 radius = 85.0235
@@ -21,3 +22,18 @@ shape = SubResource("CircleShape2D_m6k4s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pjslc")
+
+[node name="TextOnClickTemplate" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -34.0
+offset_top = -9.0
+offset_right = 35.0
+offset_bottom = 5.0
+script = ExtResource("4_cf7vl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextOnClickTemplate"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

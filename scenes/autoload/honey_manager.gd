@@ -12,8 +12,11 @@ var total_honey_on_current_level : float = 0.0 #(dsmoliakov): being also updated
 # price and income 
 # price: base * size_modifier 
 
+func get_amount_generated_by_click():
+	return click_base_value * click_base_modifier
+
 func click():
-	var honey_to_add_on_click = click_base_value * click_base_modifier
+	var honey_to_add_on_click = get_amount_generated_by_click()
 	current_honey += honey_to_add_on_click
 	total_honey_on_current_level += honey_to_add_on_click
 
