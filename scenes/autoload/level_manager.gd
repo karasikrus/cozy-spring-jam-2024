@@ -40,6 +40,8 @@ func current_level_progress()->float:
 	
 func is_passed_level_limits()->bool:
 	return HoneyManager.total_honey_on_current_level > lvlsHoneyLimits[currentLevel] 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
