@@ -5,8 +5,8 @@ var worker_template: Node2D = null
 var workers_buffer = []
 var spawn_point: Node2D = null
 var target_points = []
-var workers_cur_count: int = 10
-var workers_max_count_on_screen: int = 20
+var workers_cur_count: int = 5
+var workers_max_count_on_screen: int = 5
 # Called when the node enters the scene tree for the first time.
 
 
